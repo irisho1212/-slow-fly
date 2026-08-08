@@ -9,6 +9,34 @@
   display: none;
 }
 
+/* 修正舊版主題「白底白字」看不到的按鈕(舊版佈景色彩設定被移除後跑出來的問題) */
+a.wsite-button-highlight,
+a.wsite-button-highlight .wsite-button-inner {
+  background: var(--color-accent-blue) !important;
+  color: #fff !important;
+  border-color: var(--color-accent-blue) !important;
+}
+
+/* Facebook 粉絲專頁連結：原本需要 Facebook SDK 才能顯示的嵌入元件，
+   拿掉外部依賴後改用清楚標示的連結樣式 */
+.fb-page {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1877f2;
+  border-radius: 6px;
+}
+
+.fb-page blockquote,
+.fb-page a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.fb-page a::before {
+  content: "📘 ";
+}
+
 /* 房型頁暫用的靜態照片，等後台上線後可換成可管理的相簿 */
 .room-photo {
   display: block;
