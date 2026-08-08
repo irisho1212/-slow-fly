@@ -1,0 +1,10 @@
+title: 花蓮漫飛民宿 SLOW-FLY
+description: 花蓮民宿 漫飛民宿 Slow Fly
+lang: zh-Hant
+
+# 不用 Jekyll 內建的文章功能，這裡的頁面都是一般網頁
+collections_dir: .
+
+exclude:
+  - README.md
+  - website-project-spec.md
