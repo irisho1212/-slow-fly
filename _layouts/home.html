@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ site.description }}">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body class="home-page">
+
+{% include nav.html %}
+
+{{ content }}
+
+{% include social-floating.html %}
+
+</body>
+</html>

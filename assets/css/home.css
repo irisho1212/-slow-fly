@@ -1,0 +1,182 @@
+/* ============================================
+   首頁專屬樣式
+   ============================================ */
+
+body.home-page {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--color-text-heading);
+  overflow-x: hidden;
+}
+
+.home-page section {
+  padding: 70px 20px;
+}
+
+/* ---------- 主視覺 Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  background-image: url("../img/home/hero-mountain-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 700px) {
+  .hero {
+    background-image: url("../img/home/hero-mountain.jpg");
+    min-height: 90vh;
+  }
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  opacity: 0.95;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+@media screen and (max-width: 600px) {
+  .hero__title { font-size: 30px; }
+  .hero__subtitle { font-size: 15px; }
+}
+
+/* ---------- 氛圍故事 ---------- */
+
+.story {
+  background: #faf7f2;
+  text-align: center;
+}
+
+.story__text {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 2;
+  color: var(--color-text-heading);
+}
+
+/* ---------- 環境預覽 ---------- */
+
+.surroundings {
+  background: var(--color-white);
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  margin: 0 0 40px;
+  color: var(--color-text-heading);
+}
+
+.surroundings__grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.surroundings__grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.surroundings__caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-text-body);
+}
+
+@media screen and (max-width: 700px) {
+  .surroundings__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 訂房/聯絡 CTA ---------- */
+
+.cta {
+  background: linear-gradient(135deg, #3b8cdd, #6fc3ff);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.cta .section-title {
+  color: var(--color-white);
+}
+
+.cta__phone {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--color-white);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.cta__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta__buttons a {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.cta__buttons a:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ---------- 頁尾 ---------- */
+
+.home-footer {
+  background: #2b2b2b;
+  color: #cfcfcf;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 13px;
+}
+
+.home-footer a {
+  color: #9fd3ff;
+  text-decoration: none;
+}
