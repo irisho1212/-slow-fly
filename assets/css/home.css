@@ -25,7 +25,7 @@ body.home-page {
   padding: 0 20px;
   background-image: url("../img/home/hero-mountain-mobile.jpg");
   background-size: cover;
-  background-position: center 40%;
+  background-position: center;
 }
 
 @media screen and (min-width: 700px) {
@@ -192,7 +192,7 @@ body.home-page {
   position: relative;
   background-image: linear-gradient(rgba(40,34,30,0.55), rgba(40,34,30,0.55)), url("../img/home/surroundings-courtyard.jpg");
   background-size: cover;
-  background-position: center 90%;
+  background-position: center;
   text-align: center;
 }
 
