@@ -9,6 +9,17 @@
   display: none;
 }
 
+/* 房型頁暫用的靜態照片，等後台上線後可換成可管理的相簿 */
+.room-photo {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 16px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
 :root {
   --color-accent-pink: #ff6fa5;
   --color-accent-blue: #3b8cdd;
