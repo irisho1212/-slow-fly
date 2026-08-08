@@ -126,44 +126,64 @@ body.home-page {
 /* ---------- 訂房/聯絡 CTA ---------- */
 
 .cta {
-  background: linear-gradient(135deg, #3b8cdd, #6fc3ff);
+  position: relative;
+  background-image: linear-gradient(rgba(40,34,30,0.55), rgba(40,34,30,0.55)), url("../img/home/surroundings-courtyard.jpg");
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  color: var(--color-white);
 }
 
-.cta .section-title {
-  color: var(--color-white);
+.cta__card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.96);
+  border-radius: 16px;
+  padding: 44px 36px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.cta__card .section-title {
+  margin-bottom: 20px;
 }
 
 .cta__phone {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  color: var(--color-white);
+  color: var(--color-text-heading);
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .cta__buttons {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.cta__buttons a {
+.cta__btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 12px 22px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.6);
   color: var(--color-white);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
+  transition: opacity 0.2s;
 }
 
-.cta__buttons a:hover {
-  background: rgba(255,255,255,0.3);
+.cta__btn:hover {
+  opacity: 0.85;
+}
+
+.cta__btn--phone { background: #4caf50; }
+.cta__btn--line { background: #06c755; }
+.cta__btn--fb { background: #1877f2; }
+
+@media screen and (max-width: 600px) {
+  .cta__card {
+    padding: 32px 20px;
+  }
 }
 
 /* ---------- 頁尾 ---------- */
