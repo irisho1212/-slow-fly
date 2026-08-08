@@ -26,11 +26,17 @@ a.wsite-button-highlight .wsite-button-inner {
   border-radius: 6px;
 }
 
-.fb-page blockquote,
+.fb-page blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .fb-page a {
   color: #fff !important;
   text-decoration: none;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .fb-page a::before {
