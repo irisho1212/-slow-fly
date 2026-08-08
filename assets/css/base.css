@@ -3,6 +3,44 @@
    首頁與舊頁面都會載入這份檔案，改一次全站同步
    ============================================ */
 
+/* 舊頁面手機版基礎樣式：
+   舊主題把內容區固定寫死 970px / 830px 寬，手機打開會被迫縮小整頁、字都看不清楚。
+   這裡讓內容區、圖片、多欄位表格在小螢幕上改成可伸縮、直向堆疊。 */
+@media screen and (max-width: 700px) {
+  .container {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #main-wrap .container {
+    width: 100% !important;
+    padding: 20px 16px !important;
+  }
+
+  #wsite-content img,
+  .wsite-image img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Weebly 多欄位排版(例如房間資訊頁最上面那排 FB／優惠／按鈕)，
+     手機上改成一欄一欄往下疊，不要三欄擠在一起 */
+  .wsite-multicol-table,
+  .wsite-multicol-tbody,
+  .wsite-multicol-tr,
+  .wsite-multicol-col {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .wsite-multicol-col {
+    padding: 8px 0 !important;
+    text-align: center !important;
+  }
+}
+
 /* Weebly 相簿輪播小工具在子路徑環境下會壞掉(照片網址寫死成網站根目錄)，
    暫時隱藏，等 Step 4 房型頁重新設計時換成自己寫的相簿元件 */
 .wslide {
