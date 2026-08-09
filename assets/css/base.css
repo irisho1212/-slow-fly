@@ -280,3 +280,59 @@ a.wsite-button-highlight .wsite-button-inner {
   vertical-align: middle;
   border-radius: 4px;
 }
+
+/* ---------- 優惠活動頁：年曆海報 + 精選景點卡片 ---------- */
+
+.promo-poster {
+  display: block;
+  max-width: 480px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.promo-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.promo-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.promo-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-card__body {
+  padding: 14px 16px;
+}
+
+.promo-card__title {
+  font-family: var(--font-heading);
+  color: var(--color-text-heading);
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.promo-card__text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .promo-highlights {
+    grid-template-columns: 1fr;
+  }
+}
