@@ -50,9 +50,9 @@
 /* 修正舊版主題「白底白字」看不到的按鈕(舊版佈景色彩設定被移除後跑出來的問題) */
 a.wsite-button-highlight,
 a.wsite-button-highlight .wsite-button-inner {
-  background: var(--color-accent-blue) !important;
+  background: var(--color-primary) !important;
   color: #fff !important;
-  border-color: var(--color-accent-blue) !important;
+  border-color: var(--color-primary) !important;
 }
 
 /* Facebook 粉絲專頁連結：原本需要 Facebook SDK 才能顯示的嵌入元件，
@@ -98,12 +98,13 @@ a.wsite-button-highlight .wsite-button-inner {
 }
 
 :root {
-  --color-accent-pink: #ff6fa5;
-  --color-accent-blue: #3b8cdd;
-  --color-accent-blue-light: #86bcf3;
-  --color-text-body: #797570;
-  --color-text-heading: #494442;
-  --color-bg-dark: rgba(20, 20, 20, 0.55);
+  --color-primary: #8b4a3a;
+  --color-primary-light: #a86753;
+  --color-primary-dark: #654235;
+  --color-secondary: #5c6e4a;
+  --color-cream: #f5f3ef;
+  --color-text-body: #4a4740;
+  --color-text-heading: #6b2e20;
   --color-white: #ffffff;
   --font-base: Arial, "Microsoft JhengHei", sans-serif;
   --font-heading: "Architects Daughter", "Microsoft JhengHei", sans-serif;
@@ -114,7 +115,8 @@ a.wsite-button-highlight .wsite-button-inner {
 .site-header {
   position: relative;
   width: 100%;
-  background: var(--color-bg-dark);
+  background: var(--color-white);
+  border-bottom: 3px solid var(--color-primary);
   font-family: var(--font-base);
   z-index: 100;
 }
@@ -130,7 +132,7 @@ a.wsite-button-highlight .wsite-button-inner {
 }
 
 .site-logo {
-  color: var(--color-white);
+  color: var(--color-text-heading);
   font-family: var(--font-heading);
   font-size: 22px;
   text-decoration: none;
@@ -139,6 +141,7 @@ a.wsite-button-highlight .wsite-button-inner {
 
 .site-logo span {
   font-size: 14px;
+  color: var(--color-text-body);
   opacity: 0.75;
   display: block;
 }
@@ -149,7 +152,7 @@ a.wsite-button-highlight .wsite-button-inner {
 
 .nav-toggle-label {
   display: none;
-  color: var(--color-white);
+  color: var(--color-text-heading);
   font-size: 26px;
   cursor: pointer;
   line-height: 1;
@@ -157,20 +160,7 @@ a.wsite-button-highlight .wsite-button-inner {
 
 .site-nav {
   display: flex;
-  gap: 32px;
-}
-
-.site-nav__group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.site-nav__group-title {
-  color: var(--color-accent-pink);
-  font-size: 12px;
-  letter-spacing: 2px;
-  opacity: 0.85;
+  gap: 24px;
 }
 
 .site-nav__list {
@@ -178,11 +168,11 @@ a.wsite-button-highlight .wsite-button-inner {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .site-nav__list a {
-  color: var(--color-white);
+  color: var(--color-text-body);
   text-decoration: none;
   font-size: 15px;
   white-space: nowrap;
@@ -190,7 +180,7 @@ a.wsite-button-highlight .wsite-button-inner {
 
 .site-nav__list a:hover,
 .site-nav__list a.is-active {
-  color: var(--color-accent-blue-light);
+  color: var(--color-primary);
 }
 
 /* 手機版：漢堡選單 */
@@ -203,7 +193,7 @@ a.wsite-button-highlight .wsite-button-inner {
     display: none;
     width: 100%;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
     padding-top: 16px;
   }
 
@@ -212,7 +202,8 @@ a.wsite-button-highlight .wsite-button-inner {
   }
 
   .site-nav__list {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 14px;
   }
 }
 
@@ -251,8 +242,8 @@ a.wsite-button-highlight .wsite-button-inner {
 /* ---------- 共用頁尾 ---------- */
 
 .site-footer {
-  background: #2b2b2b;
-  color: #cfcfcf;
+  background: var(--color-primary-dark);
+  color: #ede0d5;
   text-align: center;
   padding: 30px 20px;
   font-size: 13px;
@@ -267,7 +258,7 @@ a.wsite-button-highlight .wsite-button-inner {
 }
 
 .site-footer a {
-  color: #9fd3ff;
+  color: #f2c9a8;
   text-decoration: none;
 }
 
