@@ -55,35 +55,65 @@ a.wsite-button-highlight .wsite-button-inner {
   border-color: var(--color-primary) !important;
 }
 
-/* Facebook 粉絲專頁連結：原本需要 Facebook SDK 才能顯示的嵌入元件，
-   拿掉外部依賴後改用清楚標示的連結樣式 */
-.fb-page {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  height: auto !important;
-  min-height: 0 !important;
-  padding: 8px 16px;
-  background: #1877f2;
-  border-radius: 6px;
+/* 舊頁面背景圖是 Weebly 內建的通用棕色系模糊室內照，跟新版品牌色系無關，
+   直接換成跟新配色一致的深磚色漸層；維持深色是因為舊頁面裡大量文字用了
+   淺色系 <font color> (為了在深色底上可讀)，全站文字色重寫風險/工程量太大，
+   保留深色底才不會讓那些文字看不清楚 */
+body.wsite-theme-light {
+  background-image: linear-gradient(180deg, var(--color-primary-dark), var(--color-primary));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.fb-page blockquote {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.fb-page a {
-  color: #fff !important;
+/* Facebook 粉絲專頁連結卡片：原本需要 Facebook SDK 才能顯示完整的嵌入小工具，
+   拿掉外部依賴後改用照片+按鈕的靜態卡片樣式 */
+.fb-follow-card {
+  display: block;
+  max-width: 220px;
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
   text-decoration: none;
-  font-size: 13px;
-  line-height: 1.4;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
-.fb-page a::before {
-  content: "Facebook｜";
+.fb-follow-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+}
+
+.fb-follow-card__body {
+  padding: 8px 10px;
+}
+
+.fb-follow-card__name {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--color-text-heading);
   font-weight: bold;
+}
+
+.fb-follow-card__btn {
+  display: block;
+  text-align: center;
+  background: #1877f2;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 0;
+  border-radius: 4px;
+}
+
+.fb-follow-card__btn i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  vertical-align: -1px;
+  background: #fff;
+  border-radius: 3px;
 }
 
 /* 房型頁暫用的靜態照片，等後台上線後可換成可管理的相簿 */
@@ -313,6 +343,49 @@ a.wsite-button-highlight .wsite-button-inner {
   display: block;
 }
 
+/* 純 CSS 相片輪播，不依賴外部套件 */
+.promo-card__carousel {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.promo-card__carousel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: promoFade4 12s infinite;
+}
+
+.promo-card__carousel img:nth-child(1) { animation-delay: 0s; }
+.promo-card__carousel img:nth-child(2) { animation-delay: 3s; }
+.promo-card__carousel img:nth-child(3) { animation-delay: 6s; }
+.promo-card__carousel img:nth-child(4) { animation-delay: 9s; }
+
+@keyframes promoFade4 {
+  0% { opacity: 1; }
+  22% { opacity: 1; }
+  28% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.promo-card__carousel--pair img {
+  animation-name: promoFade2;
+  animation-duration: 6s;
+}
+.promo-card__carousel--pair img:nth-child(1) { animation-delay: 0s; }
+.promo-card__carousel--pair img:nth-child(2) { animation-delay: 3s; }
+
+@keyframes promoFade2 {
+  0% { opacity: 1; }
+  45% { opacity: 1; }
+  55% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .promo-card__body {
   padding: 14px 16px;
 }
@@ -335,4 +408,31 @@ a.wsite-button-highlight .wsite-button-inner {
   .promo-highlights {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- 頁面內聯絡資訊卡片 ---------- */
+
+.contact-card {
+  background: var(--color-cream);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 16px 20px;
+  max-width: 420px;
+}
+
+.contact-card__title {
+  font-family: var(--font-heading);
+  color: var(--color-text-heading);
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: var(--color-text-body);
+  margin: 0 0 6px;
+}
+
+.contact-card a {
+  color: var(--color-primary);
 }
