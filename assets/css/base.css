@@ -492,15 +492,30 @@ body.wsite-theme-light.legacy-redesign {
   border-radius: 8px;
 }
 
-/* 房間資訊頁最上方：臉書卡片 / 好康文字 / 優惠按鈕，三欄各自垂直置中對齊，
-   用 flex align-items:center 對齊，不用 margin 手動校正 */
+/* 房間資訊頁最上方：臉書卡片 / 好康文字 / 優惠按鈕，維持左右分散排列，
+   用 flex align-items:center 對齊三者的垂直中心點，不用 margin 手動校正 */
 .room-promo-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
   margin: 10px 0;
+}
+
+/* 房間資訊頁：價格卡 + 早餐提醒卡並排 */
+.room-price-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.room-price-row .price-card,
+.room-price-row .note-cards {
+  margin: 0;
 }
 
 /* 交通指南頁：開車路線步驟列表 */
