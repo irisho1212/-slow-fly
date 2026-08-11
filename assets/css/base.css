@@ -454,13 +454,14 @@ body.wsite-theme-light.legacy-redesign {
 }
 
 .note-card {
-  background: var(--color-cream);
+  background: var(--color-white);
+  border: 1px solid rgba(139,74,58,0.15);
   border-radius: 8px;
   padding: 14px 18px;
   font-size: 18px;
   line-height: 1.7;
   color: var(--color-text-body);
-  max-width: 360px;
+  max-width: 520px;
   text-align: left;
 }
 
@@ -480,6 +481,26 @@ body.wsite-theme-light.legacy-redesign {
   font-size: 16px;
   opacity: 0.75;
   margin-top: 2px;
+}
+
+/* 房型照片：固定比例裁切框，四張大小一致 */
+.room-type-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 房間資訊頁最上方：臉書卡片 / 好康文字 / 優惠按鈕，三欄各自垂直置中對齊，
+   用 flex align-items:center 對齊，不用 margin 手動校正 */
+.room-promo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 10px 0;
 }
 
 /* 交通指南頁：開車路線步驟列表 */
