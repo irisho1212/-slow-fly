@@ -16,7 +16,7 @@
  h2 { font-size: 30px; padding: .5em 0 16px 0; line-height: 1.25; color: #494442; text-transform: uppercase; font-family: 'Ubuntu', sans-serif; }
  #banner-wrap h2, #footer-wrap h2, #splash-wrap h2 { color: #fff; border-bottom-color: rgba(0,0,0,0.2); }
  div.paragraph { font-size: 18px; line-height: 1.5; padding: .5em 0; }
- p { font-size: 18px; line-height: 1.5; padding: .5em 0; }
+ p { font-size: 18px; line-height: 1.2; padding: .5em 0; }
  blockquote { background: #fff; font-family: 'Arvo', serif; font-size: 18px; line-height: 1.5; color: #494442; padding: 1em; margin: 2em 0; border: 2px solid #c8c6c4; border-left: 2px solid #c8c6c4 !important; font-style: normal !important; }
  #splash-wrap blockquote { background: transparent; color: #fff; border-width: 2px 0 !important; border-color: rgba(0,0,0,0.2); font-size: 24px; line-height: 1.2; }
  div#content {min-height:400px;}
