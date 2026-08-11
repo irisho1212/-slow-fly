@@ -56,14 +56,171 @@ a.wsite-button-highlight .wsite-button-inner {
 }
 
 /* 舊頁面背景圖是 Weebly 內建的通用棕色系模糊室內照，跟新版品牌色系無關，
-   直接換成跟新配色一致的深磚色漸層；維持深色是因為舊頁面裡大量文字用了
-   淺色系 <font color> (為了在深色底上可讀)，全站文字色重寫風險/工程量太大，
-   保留深色底才不會讓那些文字看不清楚 */
+   先換成跟新配色一致的深磚色漸層當作全站暫時的底色。
+   已改版的頁面(.legacy-redesign，見下方區塊)會再蓋掉這個規則，
+   改用滿版分區塊的新版排版；尚未改版的頁面繼續維持這個深色底，
+   讓頁面裡大量既有的淺色系 <font color> 文字仍然可讀 */
 body.wsite-theme-light {
   background-image: linear-gradient(180deg, var(--color-primary-dark), var(--color-primary));
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* ---------- 舊頁面改版：滿版分區塊排版(套用在 .legacy-redesign 頁面) ----------
+   問題根源：舊佈景 files/main_style.css 裡 #main-wrap .container 寫死
+   background-color: rgba(0,0,0,0.7) + width: 830px，內容因此被關在
+   一個置中的黑色方框裡，兩側留白，跟首頁滿版分區塊的視覺不一致。
+   這裡拆掉那個方框，改成跟首頁一樣：每個內容區塊各自滿版撐開、
+   分區塊底色交錯(米色/白色)，區塊內再用一個置中的內容欄寬限制文字寬度 */
+body.wsite-theme-light.legacy-redesign {
+  background: var(--color-cream);
+  background-image: none;
+}
+
+.legacy-redesign #main-wrap .container {
+  background: none;
+  width: auto;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
+}
+
+.legacy-redesign #wsite-content {
+  padding: 0;
+}
+
+.legacy-section {
+  padding: 50px 20px;
+  background: var(--color-white);
+}
+
+.legacy-section--alt {
+  background: var(--color-cream);
+}
+
+.legacy-section__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 舊頁面內文大量用彩色 <font color>(橘/粉/黃/綠/紫...)，是為了在原本的
+   深色底圖上維持可讀性而配的；滿版分區塊改用淺色底之後這些顏色會看不清楚，
+   統一改回品牌的標題色/內文色，也順便解決「各分頁風格不一致」的問題 */
+.legacy-section .wsite-content-title,
+.legacy-section .wsite-content-title font[color] {
+  color: var(--color-text-heading) !important;
+  font-family: var(--font-heading);
+}
+
+.legacy-section .paragraph,
+.legacy-section .paragraph font[color] {
+  color: var(--color-text-body) !important;
+}
+
+/* 距離資訊卡片(10/20/30分鐘路程)：原本用彩色文字區分三個時間帶，
+   改版後用卡片+標題色塊區分，不再依賴顏色本身傳遞意義 */
+.distance-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.distance-card {
+  background: var(--color-white);
+  border: 1px solid rgba(139,74,58,0.15);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.distance-card__title {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.distance-card__text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .distance-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 優惠活動頁「周邊精選景點」：圖片+文字左右並排、垂直置中對齊，
+   單數/雙數交錯排版，文字用真實活動內容、加上顏色跟表情符號讓版面活潑一點 */
+.activity-feature {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 44px;
+}
+
+.activity-feature:last-child {
+  margin-bottom: 0;
+}
+
+.activity-feature--reverse {
+  flex-direction: row-reverse;
+}
+
+.activity-feature__media {
+  flex: 0 0 42%;
+}
+
+.activity-feature__media .promo-card__carousel {
+  height: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.activity-feature__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-feature__title {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.activity-feature__body {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-text-body);
+}
+
+.activity-feature__body strong {
+  color: var(--color-text-heading);
+}
+
+.activity-feature__source {
+  font-size: 11px;
+  color: var(--color-text-body);
+  opacity: 0.65;
+  margin: 10px 0 0;
+}
+
+@media screen and (max-width: 700px) {
+  .activity-feature,
+  .activity-feature--reverse {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .activity-feature__media {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }
 
 /* Facebook 粉絲專頁連結卡片：原本需要 Facebook SDK 才能顯示完整的嵌入小工具，
@@ -388,6 +545,7 @@ body.wsite-theme-light {
 
 .promo-card__body {
   padding: 14px 16px;
+  text-align: center;
 }
 
 .promo-card__title {
