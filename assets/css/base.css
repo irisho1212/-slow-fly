@@ -528,6 +528,10 @@ body.wsite-theme-light.legacy-redesign {
   align-items: center;
 }
 
+.room-price-row .note-card__text {
+  width: 100%;
+}
+
 /* 舊佈景 .wsite-button-small 內文字級太小(14px)，統一調成跟站內其他文字一致 */
 .wsite-button-inner {
   font-size: 18px;
