@@ -503,19 +503,34 @@ body.wsite-theme-light.legacy-redesign {
   margin: 10px 0;
 }
 
-/* 房間資訊頁：價格卡 + 早餐提醒卡並排 */
+/* 房間資訊頁：價格卡 + 早餐提醒卡並排，兩者一樣寬、一樣高(跟著較高的一邊撐開) */
 .room-price-row {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   margin: 20px 0;
 }
 
 .room-price-row .price-card,
 .room-price-row .note-cards {
   margin: 0;
+  flex: 1;
+  min-width: 260px;
+  max-width: none;
+}
+
+.room-price-row .note-card {
+  max-width: none;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* 舊佈景 .wsite-button-small 內文字級太小(14px)，統一調成跟站內其他文字一致 */
+.wsite-button-inner {
+  font-size: 18px;
 }
 
 /* 交通指南頁：開車路線步驟列表 */
