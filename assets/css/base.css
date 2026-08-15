@@ -555,7 +555,7 @@ body.wsite-theme-light.legacy-redesign {
   position: relative;
   padding-left: 22px !important;
   background: none !important;
-  list-style: none;
+  list-style: none !important;
 }
 
 .room-facilities-list li::before {
