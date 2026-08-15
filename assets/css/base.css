@@ -540,10 +540,10 @@ body.wsite-theme-light.legacy-redesign {
   color: var(--color-text-body);
 }
 
-.room-facilities-list {
+#main-wrap .room-facilities-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   font-size: 18px;
   line-height: 1.9;
   color: var(--color-text-body);
