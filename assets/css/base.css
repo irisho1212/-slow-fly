@@ -549,9 +549,13 @@ body.wsite-theme-light.legacy-redesign {
   color: var(--color-text-body);
 }
 
-.room-facilities-list li {
+/* 舊佈景 #main-wrap .paragraph li 有自己的項目符號圖片(theme/bullets.png)，
+   要蓋掉它，不然會跟下面 ::before 產生的菱形符號疊在一起變成兩個點 */
+#main-wrap .room-facilities-list li {
   position: relative;
-  padding-left: 22px;
+  padding-left: 22px !important;
+  background: none !important;
+  list-style: none;
 }
 
 .room-facilities-list li::before {
