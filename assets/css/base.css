@@ -137,7 +137,8 @@ body.wsite-theme-light.legacy-redesign {
 .distance-card__title {
   font-family: var(--font-heading);
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bold;
   margin: 0 0 8px;
 }
 
