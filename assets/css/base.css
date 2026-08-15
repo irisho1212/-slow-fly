@@ -541,9 +541,26 @@ body.wsite-theme-light.legacy-redesign {
 }
 
 .room-facilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   line-height: 1.9;
   color: var(--color-text-body);
+}
+
+.room-facilities-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.room-facilities-list li::before {
+  content: "\25C6";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  color: var(--color-primary);
 }
 
 .legacy-section .paragraph.room-rate strong,
@@ -835,6 +852,21 @@ body.wsite-theme-light.legacy-redesign {
   width: 22px;
   height: 22px;
   margin: 0 auto 4px;
+}
+
+/* 手機版螢幕窄，浮動聯絡按鈕縮小一點，避免佔掉太多版面 */
+@media screen and (max-width: 700px) {
+  .floating-contact a {
+    width: 44px;
+    padding: 6px 0;
+    font-size: 9px;
+  }
+
+  .floating-contact img {
+    width: 16px;
+    height: 16px;
+    margin: 0 auto 2px;
+  }
 }
 
 /* ---------- 共用頁尾 ---------- */
