@@ -504,7 +504,46 @@ body.wsite-theme-light.legacy-redesign {
   color: var(--color-text-heading) !important;
   font-family: var(--font-heading);
   font-size: 24px;
+  font-weight: bold;
   text-align: center;
+}
+
+/* 房型/包棟頁的段落小標題(住宿須知/客房設備等)，統一用標題咖啡色+粗體，
+   底下說明文字則維持一般內文色，字級跟設備清單一致(18px) */
+.room-section-title {
+  color: var(--color-text-heading);
+  font-weight: bold;
+  font-size: 19px;
+  margin: 0 0 10px;
+}
+
+.room-baodong-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.room-baodong-row .room-photo {
+  flex: 1;
+  min-width: 260px;
+  margin: 0;
+  max-width: none;
+}
+
+.room-baodong-row .room-baodong-notice {
+  flex: 1;
+  min-width: 240px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-body);
+}
+
+.room-facilities-list {
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--color-text-body);
 }
 
 .legacy-section .paragraph.room-rate strong,
