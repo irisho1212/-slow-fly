@@ -298,6 +298,7 @@ body.wsite-theme-light.legacy-redesign {
    純 CSS 做(radio + 對應 id 規則)，不需要額外載入 JS */
 .room-gallery {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
   margin: 16px auto;
 }
@@ -336,6 +337,7 @@ body.wsite-theme-light.legacy-redesign {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  max-height: 400px;
   overflow-y: auto;
 }
 
