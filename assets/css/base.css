@@ -100,7 +100,7 @@ body.wsite-theme-light.legacy-redesign {
 }
 
 .legacy-section__inner {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
@@ -309,7 +309,7 @@ body.wsite-theme-light.legacy-redesign {
   position: relative;
   flex: 1;
   min-width: 0;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 7;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);

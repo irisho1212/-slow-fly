@@ -81,6 +81,23 @@ redesigned: true
 				<label for="rg-14" class="room-gallery__thumb" id="rg-thumb-14"><img src="uploads/房間資訊/輪播照片/509149.jpg" alt=""></label>
 			</div>
 		</div>
+		<script>
+		(function() {
+			var gallery = document.querySelector('.room-gallery');
+			var radios = document.querySelectorAll('input[name="room-gallery"]');
+			if (!gallery || !radios.length) return;
+			var paused = false;
+			gallery.addEventListener('mouseenter', function() { paused = true; });
+			gallery.addEventListener('mouseleave', function() { paused = false; });
+			setInterval(function() {
+				if (paused) return;
+				var current = -1;
+				radios.forEach(function(r, i) { if (r.checked) current = i; });
+				var next = (current + 1) % radios.length;
+				radios[next].checked = true;
+			}, 4000);
+		})();
+		</script>
 
 		<div class="wsite-spacer" style="height:40px;"></div>
 
