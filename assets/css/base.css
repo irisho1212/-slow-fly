@@ -475,6 +475,8 @@ body.wsite-theme-light.legacy-redesign {
   font-family: var(--font-heading);
   color: var(--color-text-heading);
   text-align: left;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .room-type-name .room-type-name__en {
