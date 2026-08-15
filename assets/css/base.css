@@ -538,6 +538,32 @@ body.wsite-theme-light.legacy-redesign {
   font-size: 18px;
 }
 
+/* 線上付款頁：付款步驟 + 付款截圖並排。步驟欄位固定夠寬的寬度，
+   避免中文字被舊版表格窄欄(原本只有25%寬)硬切成兩行 */
+.payment-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.payment-row .direction-steps {
+  flex: 0 0 340px;
+}
+
+.payment-row__image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.payment-row__image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
 /* 交通指南頁：開車路線步驟列表 */
 .direction-steps__intro {
   font-size: 18px;
