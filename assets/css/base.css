@@ -39,6 +39,13 @@
     padding: 8px 0 !important;
     text-align: center !important;
   }
+
+  /* 交通指南/住宿須知頁的頂部橫幅圖：桌面版寫死 287px 高 + 從左上角裁切，
+     手機窄螢幕下裁掉太多、看不出照片內容，改成矮一點的高度、從正中央裁切 */
+  body.wsite-theme-light .wsite-header {
+    height: 160px !important;
+    background-position: center center !important;
+  }
 }
 
 /* Weebly 相簿輪播小工具在子路徑環境下會壞掉(照片網址寫死成網站根目錄)，
@@ -362,8 +369,17 @@ body.wsite-theme-light.legacy-redesign {
     flex-direction: column;
   }
 
+  /* flex:1 在直向排列時沒有父層明確高度可以撐開，主圖會被壓成 0 高度，
+     手機版改用固定寬度+比例，不吃 flex-grow */
+  .room-gallery__main {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
   .room-gallery__thumbs {
     flex-direction: row;
+    max-height: none;
     overflow-x: auto;
     overflow-y: visible;
     width: 100%;
@@ -526,6 +542,15 @@ body.wsite-theme-light.legacy-redesign {
   gap: 30px;
   flex-wrap: wrap;
   margin: 10px 0;
+}
+
+@media screen and (max-width: 700px) {
+  .room-promo-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* 房間資訊頁：價格卡 + 早餐提醒卡並排，兩者一樣寬、一樣高(跟著較高的一邊撐開) */
@@ -912,7 +937,8 @@ body.wsite-theme-light.legacy-redesign {
 
 @media screen and (max-width: 700px) {
   .promo-highlights {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
