@@ -481,6 +481,25 @@ body.wsite-theme-light.legacy-redesign {
   font-weight: bold;
 }
 
+/* 房型子頁(蜻蜓/甲蟲/蝴蝶/白鷺鷥)：房名用標題色，房價用主色點出重點，
+   客房設備標題用標題色，其餘維持一般內文色 */
+.legacy-section .paragraph.room-detail-title,
+.legacy-section .paragraph.room-detail-title font[color] {
+  color: var(--color-text-heading) !important;
+  font-family: var(--font-heading);
+  font-size: 24px;
+}
+
+.legacy-section .paragraph.room-rate strong,
+.legacy-section .paragraph.room-rate font[color] {
+  color: var(--color-primary) !important;
+}
+
+.legacy-section .paragraph font[color="#76e9c7"] {
+  color: var(--color-text-heading) !important;
+  font-weight: bold;
+}
+
 .room-type-name .room-type-name__en {
   display: block;
   font-size: 16px;
