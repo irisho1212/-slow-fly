@@ -542,7 +542,7 @@ body.wsite-theme-light.legacy-redesign {
    避免中文字被舊版表格窄欄(原本只有25%寬)硬切成兩行 */
 .payment-row {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   flex-wrap: wrap;
   align-items: flex-start;
   margin: 20px 0;
