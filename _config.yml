@@ -1,8 +1,8 @@
 title: 花蓮漫飛民宿 SLOW-FLY
 description: 花蓮漫飛民宿 Slow Fly，座落鄉村田園，遙望中央山脈與太平洋。提供雙人房、四人房及包棟服務，訂房專線 03-826-0006。
 lang: zh-Hant
-url: "https://irisho1212.github.io"
-baseurl: "/-slow-fly"
+url: "https://slowfly-hualien.com"
+baseurl: ""
 default_image: /assets/img/home/hero-mountain.jpg
 
 # 不用 Jekyll 內建的文章功能，這裡的頁面都是一般網頁
